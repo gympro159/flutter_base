@@ -10,7 +10,7 @@ class PasswordValidate implements Validate<String> {
             r'^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$',
             caseSensitive: false)
         .hasMatch(value)) {
-      return trans(PASSWORD_VALIDATE)!;
+      return trans(PASSWORD_VALIDATE);
     }
     return '';
   }

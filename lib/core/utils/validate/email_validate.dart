@@ -10,7 +10,7 @@ class EmailValidate extends Validate<String> {
     if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
             .hasMatch(value.trim()) ==
         false) {
-      return trans(EMAIL_VALIDATE_WRONG_FORMAT)!;
+      return trans(EMAIL_VALIDATE_WRONG_FORMAT);
     }
     return '';
   }

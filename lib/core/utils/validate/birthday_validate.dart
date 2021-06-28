@@ -13,7 +13,7 @@ class DOBValidate extends Validate<String> {
 
     if (DateTime.now().difference(DateTime.parse(valueFormat)).inMicroseconds <
         0) {
-      return trans(BIRTHDAY_VALIDATE)!;
+      return trans(BIRTHDAY_VALIDATE);
     }
     return '';
   }

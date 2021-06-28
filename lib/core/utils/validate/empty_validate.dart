@@ -11,7 +11,7 @@ class EmptyValidate extends Validate<String> {
         (errorText == trans(PERMANENT_WARDS_VALIDATE_EMPTY) &&
             value == trans(SELECT_))) {
       // if (errorText != null) return errorText;
-      return trans(REQUIRE_FIELD_INFO)!;
+      return trans(REQUIRE_FIELD_INFO);
     }
 
     return '';

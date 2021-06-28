@@ -13,7 +13,7 @@ class LinkValidate implements Validate<String> {
       us = value;
     });
     if (!us) {
-      return trans(LINK_VALIDATE)!;
+      return trans(LINK_VALIDATE);
     }
     return '';
   }
