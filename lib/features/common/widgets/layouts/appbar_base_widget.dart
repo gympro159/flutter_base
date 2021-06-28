@@ -16,28 +16,25 @@ class AppBarBaseWidget extends StatelessWidget implements PreferredSizeWidget {
       this.isTitleHeaderWidget,
       this.titleHeaderWidget,
       this.centerTitle,
-      this.bottom,
       this.onPop,
       this.isShowLeading})
-      : preferredSize = Size.fromHeight(toolBarHeight);
-  final List<Widget> actions;
-  final String title;
+      : preferredSize = Size.fromHeight(toolBarHeight!);
+  final List<Widget>? actions;
+  final String? title;
   final Size preferredSize;
-  final double toolBarHeight;
-  final bool isTitleHeaderWidget;
-  final Widget titleHeaderWidget;
-  final bool centerTitle;
-  final Widget bottom;
-  final Function onPop;
-  final Widget leading;
-  final bool isShowLeading;
+  final double? toolBarHeight;
+  final bool? isTitleHeaderWidget;
+  final Widget? titleHeaderWidget;
+  final bool? centerTitle;
+  final Function? onPop;
+  final Widget? leading;
+  final bool? isShowLeading;
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      bottom: bottom,
       actions: actions ?? actions,
       backgroundColor: Colors.transparent,
-      leading: isShowLeading
+      leading: isShowLeading == true
           ? leading != null
               ? leading
               : IconButton(
@@ -50,7 +47,7 @@ class AppBarBaseWidget extends StatelessWidget implements PreferredSizeWidget {
                     if (onPop == null) {
                       Navigator.pop(context);
                     } else {
-                      onPop();
+                      onPop!();
                     }
                   },
                 )
@@ -58,10 +55,10 @@ class AppBarBaseWidget extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: toolBarHeight ?? toolBarHeight,
       centerTitle: centerTitle,
       elevation: 0,
-      title: isTitleHeaderWidget
+      title: isTitleHeaderWidget == true
           ? titleHeaderWidget
           : Text(
-              title,
+              title!,
               style: GoogleFonts.openSans(
                 color: Colors.white,
                 fontSize: fontExLarge,

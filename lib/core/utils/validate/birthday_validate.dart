@@ -9,12 +9,12 @@ class DOBValidate extends Validate<String> {
     var inputFormat = DateFormat('dd/MM/yyyy');
     var outputFormat = DateFormat('yyyy-MM-dd');
     var valueFormat = outputFormat.format(inputFormat.parse(value));
-    if (value.trim().isEmpty) return null;
+    if (value.trim().isEmpty) return '';
 
     if (DateTime.now().difference(DateTime.parse(valueFormat)).inMicroseconds <
         0) {
-      return trans(BIRTHDAY_VALIDATE);
+      return trans(BIRTHDAY_VALIDATE)!;
     }
-    return null;
+    return '';
   }
 }

@@ -14,9 +14,9 @@ Future<bool> checkNetwork(BuildContext context) async {
       return true;
     }
   } on SocketException catch (_) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
       Fluttertoast.showToast(
-        msg: trans(ERROR_CONNECTION_FAILED),
+        msg: trans(ERROR_CONNECTION_FAILED)!,
       );
     });
     return false;

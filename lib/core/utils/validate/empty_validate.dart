@@ -3,7 +3,7 @@ import 'package:flutter_base/core/resources/string_lang.dart';
 import 'package:flutter_base/core/utils/validate/validate.dart';
 
 class EmptyValidate extends Validate<String> {
-  String errorText;
+  String? errorText;
   EmptyValidate({this.errorText});
   @override
   String validate(String value) {
@@ -11,9 +11,9 @@ class EmptyValidate extends Validate<String> {
         (errorText == trans(PERMANENT_WARDS_VALIDATE_EMPTY) &&
             value == trans(SELECT_))) {
       // if (errorText != null) return errorText;
-      return trans(REQUIRE_FIELD_INFO);
+      return trans(REQUIRE_FIELD_INFO)!;
     }
 
-    return null;
+    return '';
   }
 }

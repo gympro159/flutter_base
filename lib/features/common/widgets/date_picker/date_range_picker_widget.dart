@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/core/resources/font_sizes.dart';
 import 'package:flutter_base/core/resources/resources.dart';
 import 'package:flutter_base/features/common/widgets/date_picker/button_date_widget.dart';
-import 'package:flutter_base/features/common/widgets/inputs/core/input_decorator_custom.dart';
-import 'package:flutter_base/features/common/widgets/inputs/core/text_form_field_custom.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -47,7 +45,7 @@ class _DateRangePickerWidgetState extends State<DateRangePickerWidget> {
   @override
   Widget build(BuildContext context) => HeaderWidget(
         title: 'Date Range',
-        child: TextFormFieldCustom(
+        child: TextFormField(
           controller: widget.rangeDateController,
           readOnly: true,
           focusNode: widget.rangeDateFocusNode,
@@ -61,7 +59,6 @@ class _DateRangePickerWidgetState extends State<DateRangePickerWidget> {
           ),
           decoration: InputDecoration(
             helperText: '',
-            isMandate: true,
             border: OutlineInputBorder(
               borderSide: BorderSide(color: BORDER_COLOR, width: 0.6),
               borderRadius: BorderRadius.circular(8),

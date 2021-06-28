@@ -24,20 +24,18 @@ typedef Future<http.Response> _RequestMethodChooser(String token);
 class NetworkRequestImpl implements NetworkRequest {
   final http.Client client;
   final SharedPreferences sharedPreferences;
-  final prefs = singleton<SharedPreferences>();
-  String locale = ui.window.locale.languageCode;
-  NetworkRequestImpl({this.client, this.sharedPreferences});
+  NetworkRequestImpl({required this.client, required this.sharedPreferences});
 
   @override
   Future<http.Response> getRequest(
-      {required String url, String service}) async {
+      {required String url, String? service}) async {
     return await _requestUrl((token) {
       return client.get(
         Uri.parse(url),
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
           'Accept-Language': getLangCode(),
-          HttpHeaders.authorizationHeader: token != null ? 'Bearer $token' : '',
+          HttpHeaders.authorizationHeader: 'Bearer $token',
         },
       ).timeout(
         Duration(seconds: 20),
@@ -50,22 +48,13 @@ class NetworkRequestImpl implements NetworkRequest {
 
   @override
   Future<http.Response> putRequest(
-      {required String url, required String body, String service}) async {
+      {required String url, required String body, String? service}) async {
     return await _requestUrl((token) {
       return client.put(Uri.parse(url),
           headers: {
             'Content-Type': 'application/json; charset=UTF-8',
             'Accept-Language': getLangCode(),
-            HttpHeaders.authorizationHeader:
-                token != null ? 'Bearer $token' : '',
-            'provinceId': '1',
-            'districtId': '1',
-            'wardId': '1',
-            'tntid': '8e055926-4e5b-11eb-a6f9-0242ac110002',
-            'os_type': 'Android',
-            'mode': 'android',
-            'app_version': '1.0.1',
-            'os_version': '9',
+            HttpHeaders.authorizationHeader: 'Bearer $token',
           },
           body: body);
     }).timeout(
@@ -78,24 +67,14 @@ class NetworkRequestImpl implements NetworkRequest {
 
   @override
   Future<http.Response> postRequest(
-      {required String url, required String body, String service}) async {
+      {required String url, String? body, String? service}) async {
     return await _requestUrl((token) {
       return client
           .post(Uri.parse(url),
               headers: {
                 'Content-Type': 'application/json; charset=UTF-8',
                 'Accept-Language': getLangCode(),
-                HttpHeaders.authorizationHeader:
-                    token != null ? 'Bearer $token' : '',
-                'Accept': 'application/json',
-                // 'provinceId': '1',
-                // 'districtId': '1',
-                // 'wardId': '1',
-                'tntid': '8e055926-4e5b-11eb-a6f9-0242ac110002',
-                'os_type': 'Android',
-                'mode': 'android',
-                'app_version': '1.0.1',
-                'os_version': '9'
+                HttpHeaders.authorizationHeader: 'Bearer $token',
               },
               body: body)
           .timeout(
@@ -109,17 +88,14 @@ class NetworkRequestImpl implements NetworkRequest {
 
   @override
   Future<http.Response> deleteRequest(
-      {required String url, String service}) async {
+      {required String url, String? service}) async {
     return await _requestUrl((token) {
       return client.delete(
         Uri.parse(url),
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
           'Accept-Language': getLangCode(),
-          HttpHeaders.authorizationHeader: token != null ? 'Bearer $token' : '',
-          'provinceId': '1',
-          'districtId': '1',
-          'wardId': '1',
+          HttpHeaders.authorizationHeader: 'Bearer $token',
         },
       ).timeout(
         Duration(seconds: 20),
@@ -135,7 +111,7 @@ class NetworkRequestImpl implements NetworkRequest {
   ) async {
     try {
       final token = sharedPreferences.getString('token');
-      final res = await requestMethod(token);
+      final res = await requestMethod(token!);
       return res;
     } catch (error) {
       throw error;

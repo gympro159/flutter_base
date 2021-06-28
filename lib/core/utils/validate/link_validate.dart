@@ -7,15 +7,15 @@ class LinkValidate implements Validate<String> {
   @override
   String validate(String url) {
     print(url);
-    if (url.trim().isEmpty) return null;
+    if (url.trim().isEmpty) return '';
     bool us = false;
     isLink(url).then((value) {
       us = value;
     });
     if (!us) {
-      return trans(LINK_VALIDATE);
+      return trans(LINK_VALIDATE)!;
     }
-    return null;
+    return '';
   }
 }
 

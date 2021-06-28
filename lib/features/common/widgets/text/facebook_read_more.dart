@@ -2,17 +2,17 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class FbReadMore extends StatefulWidget {
-  final String title;
-  final String content;
-  final int lineNum;
-  final String trimText;
-  final TextStyle titleStyle;
-  final TextStyle contentStyle;
-  final TextStyle trimStyle;
+  final String? title;
+  final String? content;
+  final int? lineNum;
+  final String? trimText;
+  final TextStyle? titleStyle;
+  final TextStyle? contentStyle;
+  final TextStyle? trimStyle;
   final String delimiter;
 
   const FbReadMore({
-    Key key,
+    Key? key,
     this.title,
     this.content,
     this.lineNum = 2,
@@ -68,9 +68,9 @@ class _FbReadMoreState extends State<FbReadMore> {
       final span =
           TextSpan(text: widget.title, style: widget.titleStyle, children: [
         TextSpan(
-            text: showMore || endIndex > widget.content.length - 1
+            text: showMore || endIndex > widget.content!.length - 1
                 ? widget.content
-                : widget.content.substring(0, endIndex),
+                : widget.content!.substring(0, endIndex),
             style: widget.contentStyle),
         _delimiter,
         _link,
