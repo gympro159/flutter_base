@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/app_localizations.dart';
 import 'package:flutter_base/features/home/presentation/pages/home.dart';
 import 'package:flutter_base/injection_container.dart';
+import 'injection_container.dart' as di;
 import 'package:bloc/bloc.dart';
 import 'package:flutter_base/simple_bloc_observer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +10,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   Bloc.observer = SimpleBlocObserver();
   runApp(MyApp());
 }

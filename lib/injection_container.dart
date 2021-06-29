@@ -10,10 +10,10 @@ Future<void> init() async {
   //! Core
 
   //! External
-  PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  final PackageInfo packageInfo = await PackageInfo.fromPlatform();
   final sharedPreferences = await SharedPreferences.getInstance();
   singleton.registerLazySingleton(() => sharedPreferences);
-  singleton.registerLazySingleton(() => packageInfo);
+  // singleton.registerLazySingleton(() => packageInfo);
   singleton.registerLazySingleton(() => http.Client());
   final downloadLocalNotification = FlutterLocalNotificationsPlugin();
   singleton.registerLazySingleton(() => downloadLocalNotification);
