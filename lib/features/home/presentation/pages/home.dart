@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/core/resources/resources.dart';
+import 'package:flutter_base/features/home/presentation/widgets/card.dart';
 import 'package:flutter_base/features/home/presentation/widgets/drawer.dart';
+import 'package:flutter_base/features/home/presentation/widgets/form_cards.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -28,11 +31,17 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         drawer: HomeDrawer(),
         body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 40),
+          padding:
+              const EdgeInsets.only(top: 40, bottom: 40, left: 16, right: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
-            children: [],
+            children: [
+              FormCards(
+                title: 'Text',
+                listCard: [CardWidget(title: 'Text', router: ROUTER_TEXT_PAGE)],
+              )
+            ],
           ),
         ));
   }

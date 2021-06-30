@@ -24,10 +24,10 @@ class MyThemes {
   static final darkTheme = ThemeData(
     // canvasColor: Colors.transparent,
     scaffoldBackgroundColor: Colors.black,
-    primaryColor: Colors.black,
+    primaryColor: Colors.grey.shade900,
     colorScheme: ColorScheme.dark(),
     buttonColor: Colors.grey.shade900,
-    iconTheme: IconThemeData(color: Colors.purple.shade200, opacity: 0.8),
+    iconTheme: IconThemeData(color: Colors.white),
     primaryIconTheme:
         IconThemeData(color: Colors.purple.shade200, opacity: 0.8),
 
@@ -48,8 +48,8 @@ class MyThemes {
     scaffoldBackgroundColor: Colors.white,
     primaryColor: Colors.blue,
     colorScheme: ColorScheme.light(),
-    buttonColor: Colors.grey.shade300,
-    iconTheme: IconThemeData(color: Colors.red, opacity: 0.8),
+    buttonColor: Colors.grey.shade100,
+    iconTheme: IconThemeData(color: Colors.white),
     primaryIconTheme: IconThemeData(color: Colors.red, opacity: 0.8),
 
     // Define the default font family.

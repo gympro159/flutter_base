@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/app_localizations.dart';
 import 'package:flutter_base/core/providers/theme.dart';
+import 'package:flutter_base/core/resources/routers.dart';
 import 'package:flutter_base/features/home/presentation/pages/home.dart';
+import 'package:flutter_base/features/text_page/presentation/pages/text_page.dart';
 import 'package:flutter_base/injection_container.dart';
 import 'package:provider/provider.dart';
 import 'injection_container.dart' as di;
@@ -82,7 +84,12 @@ class _MyAppState extends State<MyApp> {
                   // from the list (Vietnamese, in this case).
                   return supportedLocales.first;
                 },
-                home: MyHomePage(title: 'Flutter Demo Home Page'),
+                initialRoute: ROUTER_HOME,
+                routes: {
+                  ROUTER_HOME: (context) =>
+                      MyHomePage(title: 'Flutter Demo Home Page'),
+                  ROUTER_TEXT_PAGE: (context) => TextPage(),
+                },
               );
             });
       },
