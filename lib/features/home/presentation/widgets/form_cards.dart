@@ -13,20 +13,24 @@ class FormCards extends StatelessWidget {
       Container(
         padding: EdgeInsets.all(10),
         child: Center(
-            child: Text(title, style: Theme.of(context).textTheme.subtitle1)),
+            child: Text(title.toUpperCase(),
+                style: Theme.of(context).textTheme.subtitle1)),
         decoration: BoxDecoration(
           border: Border(
-              bottom: BorderSide(color: Colors.grey.shade300, width: 0.5)),
+              bottom: BorderSide(color: Colors.grey.shade300, width: 0.3)),
         ),
       )
     ]..addAll(listCard);
     return Container(
+      margin: EdgeInsets.only(bottom: 16),
+      padding: EdgeInsets.all(0.5),
       child: Column(
         children: listcontent,
       ),
       decoration: BoxDecoration(
         color: Theme.of(context).buttonColor,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+        border: Border.all(color: Colors.grey.shade900, width: 0.1),
+        borderRadius: BorderRadius.circular(16),
       ),
     );
   }

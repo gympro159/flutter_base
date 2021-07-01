@@ -86,8 +86,7 @@ class _MyAppState extends State<MyApp> {
                 },
                 initialRoute: ROUTER_HOME,
                 routes: {
-                  ROUTER_HOME: (context) =>
-                      MyHomePage(title: 'Flutter Demo Home Page'),
+                  ROUTER_HOME: (context) => MyHomePage(title: 'Flutter Book'),
                   ROUTER_TEXT_PAGE: (context) => TextPage(),
                 },
               );
