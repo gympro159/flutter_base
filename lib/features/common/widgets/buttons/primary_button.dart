@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/core/resources/resources.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+import 'package:sizer/sizer.dart';
 
 abstract class OnButtonClickListener {
   onClick(String id);
@@ -17,12 +15,9 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 44,
-      child: RaisedButton(
-          color: PRIMARY_COLOR,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(36),
-          ),
+      height: 6.0.h,
+      child: ElevatedButton(
+          style: Theme.of(context).elevatedButtonTheme.style,
           onPressed: () {
             try {
               (ctx as OnButtonClickListener).onClick(id);
@@ -30,14 +25,44 @@ class PrimaryButton extends StatelessWidget {
               throw e;
             }
           },
-          child: AutoSizeText(
+          child: Text(
             label,
-            style: GoogleFonts.inter(
-              fontSize: fontMiddle,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-            minFontSize: 15,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          )),
+    );
+  }
+}
+
+class PrimaryIconButton extends StatelessWidget {
+  final String label;
+  final String id;
+  final State ctx;
+  final IconData icon;
+
+  PrimaryIconButton({
+    required this.label,
+    required this.id,
+    required this.ctx,
+    required this.icon,
+  });
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 6.0.h,
+      child: ElevatedButton.icon(
+          style: Theme.of(context).elevatedButtonTheme.style,
+          onPressed: () {
+            try {
+              (ctx as OnButtonClickListener).onClick(id);
+            } catch (e) {
+              throw e;
+            }
+          },
+          icon: Icon(icon),
+          label: Text(
+            label,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           )),

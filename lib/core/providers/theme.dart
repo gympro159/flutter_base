@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_base/core/resources/resources.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class ThemeProvider extends ChangeNotifier {
-  ThemeMode themeMode = ThemeMode.light;
+  ThemeMode themeMode = ThemeMode.dark;
 
   bool get isDarkMode {
     if (themeMode == ThemeMode.system) {
@@ -39,11 +41,38 @@ class MyThemes {
     cardColor: Colors.grey.shade900,
 
     buttonColor: Colors.grey.shade900,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        primary: Colors.grey.shade700,
+        onPrimary: Colors.white,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(36.0)),
+        textStyle: GoogleFonts.inter(
+          fontSize: fontMiddle,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        backgroundColor: Colors.grey.shade300,
+        primary: Colors.black, //Text Color
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(36.0),
+        ),
+        side: BorderSide(color: Colors.black, width: 0.8),
+        textStyle: GoogleFonts.inter(
+          color: Colors.black,
+          fontSize: fontMiddle,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
 
-    // Define the default font family.
-    fontFamily: 'Georgia',
+    //! Define the default font family.
+    fontFamily: 'Roboto',
 
-    // Define the default TextTheme. Use this to specify the default
+    //! Define the default TextTheme. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.
     textTheme: TextTheme(
       subtitle1: TextStyle(fontSize: 15.0.sp, fontWeight: FontWeight.bold),
@@ -65,7 +94,7 @@ class MyThemes {
     scaffoldBackgroundColor: Colors.grey.shade100,
 
     //!Appbar default
-    primaryColor: Colors.red,
+    primaryColor: PRIMARY_COLOR,
 
     //!Text color default
     colorScheme: ColorScheme.light(),
@@ -77,9 +106,36 @@ class MyThemes {
     cardColor: Color(0xfff1f8ff),
 
     buttonColor: Colors.white,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        primary: PRIMARY_COLOR,
+        onPrimary: Colors.white,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(36.0)),
+        textStyle: GoogleFonts.inter(
+          fontSize: fontMiddle,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        backgroundColor: Colors.white,
+        primary: PRIMARY_COLOR, //Text Color
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(36.0),
+        ),
+        side: BorderSide(color: PRIMARY_COLOR, width: 0.8),
+        textStyle: GoogleFonts.inter(
+          color: PRIMARY_COLOR,
+          fontSize: fontMiddle,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
 
     //! Define the default font family.
-    fontFamily: 'Georgia',
+    fontFamily: 'Roboto',
 
     //! Define the default TextTheme. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.

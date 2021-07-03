@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
               listCard: [
                 CardWidget(
                   title: 'Button',
-                  router: ROUTER_TEXT_PAGE,
+                  router: ROUTER_BUTTON_PAGE,
                   cardLast: true,
                 )
               ],

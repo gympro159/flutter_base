@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/app_localizations.dart';
 import 'package:flutter_base/core/providers/theme.dart';
 import 'package:flutter_base/core/resources/routers.dart';
+import 'package:flutter_base/features/button_page/presentation/pages/button_page.dart';
 import 'package:flutter_base/features/home/presentation/pages/home.dart';
 import 'package:flutter_base/features/text_page/presentation/pages/text_page.dart';
 import 'package:flutter_base/injection_container.dart';
@@ -88,6 +89,7 @@ class _MyAppState extends State<MyApp> {
                 routes: {
                   ROUTER_HOME: (context) => MyHomePage(title: 'Flutter Book'),
                   ROUTER_TEXT_PAGE: (context) => TextPage(),
+                  ROUTER_BUTTON_PAGE: (context) => ButtonPage(),
                 },
               );
             });
