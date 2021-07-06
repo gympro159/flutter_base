@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/features/common/widgets/demo/demo_widget.dart';
 import 'package:marquee/marquee.dart';
 
+//!https://pub.dev/packages/marquee
+
 class MarqueeWidget extends StatelessWidget {
   const MarqueeWidget({Key? key}) : super(key: key);
 

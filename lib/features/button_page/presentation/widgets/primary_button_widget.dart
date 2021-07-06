@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/features/common/widgets/buttons/primary_button.dart';
 import 'package:flutter_base/features/common/widgets/demo/demo_widget.dart';
+import 'package:sizer/sizer.dart';
 
 class PrimaryButtonWidget extends StatefulWidget {
   const PrimaryButtonWidget({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class _PrimaryButtonWidgetState extends State<PrimaryButtonWidget>
     return DemoWidget(
       title: 'Primary Button',
       content: Container(
-          width: 200,
+          width: 50.0.w,
           child: PrimaryButton(label: 'Primary Button', id: 'id', ctx: this)),
       sourceCode: 'https://google.com',
     );
@@ -45,12 +46,13 @@ class _PrimaryIconButtonWidgetState extends State<PrimaryIconButtonWidget>
     return DemoWidget(
       title: 'Primary Icon Button',
       content: Container(
+          width: 60.0.w,
           child: PrimaryIconButton(
-        label: 'Primary Icon Button',
-        id: 'id',
-        ctx: this,
-        icon: Icons.ac_unit,
-      )),
+            label: 'Primary Icon Button',
+            id: 'id',
+            ctx: this,
+            icon: Icons.ac_unit,
+          )),
       sourceCode: 'https://google.com',
     );
   }

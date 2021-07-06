@@ -18,10 +18,14 @@ dependencies:
   package_info: ^2.0.2
 
   #UI
+  getwidget: ^2.0.3
   cupertino_icons: ^1.0.2
   fluttertoast: ^8.0.7
   carousel_slider: ^4.0.0
   modal_bottom_sheet: ^2.0.0
+
+  #Alarm
+  flash: ^2.0.1
 
   #Launcher
   url_launcher: ^6.0.7

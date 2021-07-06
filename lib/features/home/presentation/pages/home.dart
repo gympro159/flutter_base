@@ -129,6 +129,16 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             FormCards(
+              title: 'Carousel Slider',
+              listCard: [
+                CardWidget(
+                  title: 'Carousel Slider',
+                  router: ROUTER_TEXT_PAGE,
+                  cardLast: true,
+                )
+              ],
+            ),
+            FormCards(
               title: 'File',
               listCard: [
                 CardWidget(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/features/common/widgets/buttons/outline_custom_button.dart';
 import 'package:flutter_base/features/common/widgets/buttons/primary_button.dart';
 import 'package:flutter_base/features/common/widgets/demo/demo_widget.dart';
+import 'package:sizer/sizer.dart';
 
 class OutlinedButtonWidget extends StatefulWidget {
   const OutlinedButtonWidget({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class _OutlinedButtonWidgetState extends State<OutlinedButtonWidget>
     return DemoWidget(
       title: 'Outlined Button',
       content: Container(
-          width: 200,
+          width: 50.0.w,
           child: OutlinedCustomButton(
               label: 'Outlined Button', id: 'id', ctx: this)),
       sourceCode: 'https://google.com',
@@ -47,12 +48,13 @@ class _OutlinedIconButtonWidgetState extends State<OutlinedIconButtonWidget>
     return DemoWidget(
       title: 'Outlined Icon Button',
       content: Container(
+          width: 60.0.w,
           child: OutlinedIconCustomButton(
-        label: 'Outlined Icon Button',
-        id: 'id',
-        ctx: this,
-        icon: Icons.ac_unit,
-      )),
+            label: 'Outlined Icon Button',
+            id: 'id',
+            ctx: this,
+            icon: Icons.ac_unit,
+          )),
       sourceCode: 'https://google.com',
     );
   }
