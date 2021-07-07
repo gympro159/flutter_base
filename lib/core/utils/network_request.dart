@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_base/core/functions/handle_language.dart';
 import 'package:flutter_base/core/resources/string_lang.dart';
 import 'package:flutter_base/injection_container.dart';

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/app_localizations.dart';
 import 'package:flutter_base/core/providers/theme.dart';
 import 'package:flutter_base/core/resources/routers.dart';
+import 'package:flutter_base/features/alarm_page/presentation/pages/dialog_page.dart';
+import 'package:flutter_base/features/alarm_page/presentation/pages/snackbar_page.dart';
+import 'package:flutter_base/features/alarm_page/presentation/pages/toast_page.dart';
 import 'package:flutter_base/features/button_page/presentation/pages/button_page.dart';
 import 'package:flutter_base/features/home/presentation/pages/home.dart';
 import 'package:flutter_base/features/text_page/presentation/pages/text_page.dart';
@@ -90,6 +93,9 @@ class _MyAppState extends State<MyApp> {
                   ROUTER_HOME: (context) => MyHomePage(title: 'Flutter Book'),
                   ROUTER_TEXT_PAGE: (context) => TextPage(),
                   ROUTER_BUTTON_PAGE: (context) => ButtonPage(),
+                  ROUTER_TOAST_PAGE: (context) => ToastPage(),
+                  ROUTER_SNACKBAR_PAGE: (context) => SnackbarPage(),
+                  ROUTER_DIALOG_PAGE: (context) => DialogPage(),
                 },
               );
             });

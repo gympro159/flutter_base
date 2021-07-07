@@ -83,35 +83,21 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             FormCards(
-              title: 'Toast',
+              title: 'Alarm',
               listCard: [
                 CardWidget(
                   title: 'Toast',
-                  router: ROUTER_TEXT_PAGE,
-                  cardLast: true,
-                )
-              ],
-            ),
-            FormCards(
-              title: 'Dialog',
-              listCard: [
-                CardWidget(
-                  title: 'Loading Dialog',
-                  router: ROUTER_TEXT_PAGE,
-                ),
-                CardWidget(
-                  title: 'Alarm Dialog',
-                  router: ROUTER_TEXT_PAGE,
-                ),
-                CardWidget(
-                  title: 'Confirm Dialog',
-                  router: ROUTER_TEXT_PAGE,
+                  router: ROUTER_TOAST_PAGE,
                 ),
                 CardWidget(
                   title: 'Snackbar',
-                  router: ROUTER_TEXT_PAGE,
+                  router: ROUTER_SNACKBAR_PAGE,
+                ),
+                CardWidget(
+                  title: 'Dialog',
+                  router: ROUTER_DIALOG_PAGE,
                   cardLast: true,
-                )
+                ),
               ],
             ),
             FormCards(

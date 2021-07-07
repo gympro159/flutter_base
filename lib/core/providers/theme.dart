@@ -144,7 +144,7 @@ class MyThemes {
       subtitle2: TextStyle(fontSize: 14.0.sp, fontWeight: FontWeight.bold),
       headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
       headline5: TextStyle(fontSize: 30.0),
-      headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+      headline6: TextStyle(fontSize: 36.0),
       bodyText1: TextStyle(fontSize: 14.0.sp, fontWeight: FontWeight.bold),
       bodyText2: TextStyle(fontSize: 14.0.sp),
     ).apply(
