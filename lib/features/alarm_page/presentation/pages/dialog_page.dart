@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_base/features/alarm_page/presentation/widgets/dialog/confirm_dialog_widget.dart';
 import 'package:flutter_base/features/alarm_page/presentation/widgets/dialog/info_dialog_widget.dart';
 import 'package:flutter_base/features/alarm_page/presentation/widgets/dialog/loading_dialog_widget.dart';
+import 'package:flutter_base/features/alarm_page/presentation/widgets/dialog/modal_bottom_sheet_widget.dart';
 
 class DialogPage extends StatelessWidget {
   const DialogPage({Key? key}) : super(key: key);
@@ -18,7 +19,8 @@ class DialogPage extends StatelessWidget {
           children: [
             InfoDialogWidget(),
             ConfirmDialogWidget(),
-            LoadingDialogWidget()
+            LoadingDialogWidget(),
+            ModalBottomSheetWidget(),
           ],
         ));
   }
