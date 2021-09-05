@@ -2,13 +2,13 @@ import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 
-class Photo extends Equatable {
+class PhotoModel extends Equatable {
   final int albumId;
-  final int id;
+  final String id;
   final String title;
   final String url;
   final String thumbnailUrl;
-  Photo({
+  PhotoModel({
     required this.albumId,
     required this.id,
     required this.title,
@@ -16,16 +16,16 @@ class Photo extends Equatable {
     required this.thumbnailUrl,
   });
 
-  Photo copyWith({
+  PhotoModel copyWith({
     int? albumId,
-    int? id,
+    required String id,
     String? title,
     String? url,
     String? thumbnailUrl,
   }) {
-    return Photo(
+    return PhotoModel(
       albumId: albumId ?? this.albumId,
-      id: id ?? this.id,
+      id: id,
       title: title ?? this.title,
       url: url ?? this.url,
       thumbnailUrl: thumbnailUrl ?? this.thumbnailUrl,
@@ -42,10 +42,10 @@ class Photo extends Equatable {
     };
   }
 
-  factory Photo.fromMap(Map<String, dynamic> map) {
-    return Photo(
+  factory PhotoModel.fromMap(Map<String, dynamic> map) {
+    return PhotoModel(
       albumId: map['albumId']?.toInt(),
-      id: map['id']?.toInt(),
+      id: map['id'],
       title: map['title'],
       url: map['url'],
       thumbnailUrl: map['thumbnailUrl'],
@@ -54,18 +54,19 @@ class Photo extends Equatable {
 
   String toJson() => json.encode(toMap());
 
-  factory Photo.fromJson(String source) => Photo.fromMap(json.decode(source));
+  factory PhotoModel.fromJson(String source) =>
+      PhotoModel.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'Photo(albumId: $albumId, id: $id, title: $title, url: $url, thumbnailUrl: $thumbnailUrl)';
+    return 'PhotoModel(albumId: $albumId, id: $id, title: $title, url: $url, thumbnailUrl: $thumbnailUrl)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Photo &&
+    return other is PhotoModel &&
         other.albumId == albumId &&
         other.id == id &&
         other.title == title &&

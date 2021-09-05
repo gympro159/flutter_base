@@ -9,6 +9,7 @@ import 'package:flutter_base/features/button_page/presentation/pages/button_page
 import 'package:flutter_base/features/home/presentation/pages/home.dart';
 import 'package:flutter_base/features/text_page/presentation/pages/text_page.dart';
 import 'package:flutter_base/injection_container.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'injection_container.dart' as di;
 import 'package:bloc/bloc.dart';
@@ -21,6 +22,7 @@ import 'package:sizer/sizer.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await di.init();
+  await dotenv.load(fileName: ".env");
   Bloc.observer = SimpleBlocObserver();
   runApp(MyApp());
 }
